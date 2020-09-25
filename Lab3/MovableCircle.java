@@ -1,0 +1,38 @@
+package Lab3;
+
+public class MovableCircle implements  Movable{
+    private int radius;
+    private MovablePoint center;
+
+    public  MovableCircle(int x, int y, int xSpeed, int ySpeed, int radius){
+        this.center = new MovablePoint(x, y, xSpeed, ySpeed);
+        this.radius = radius;
+    }
+
+    @Override
+    public void moveUp() {
+        center.moveUp();
+    }
+
+    @Override
+    public void moveDown() {
+        center.moveDown();
+    }
+
+    @Override
+    public void moveLeft() {
+        center.moveLeft();
+    }
+
+    @Override
+    public void moveRight() {
+        center.moveRight();
+    }
+
+    public String toString()
+    {
+        return "Center's coordinates is on x: " + center.x + ", y: " + center.y  + ". Circle crosses Ox axis in x = " +
+                (center.x + this.radius) + ", " + (center.x - this.radius) + " and Oy axis in y = " +
+                + (center.y + this.radius) + ", " + (center.y - this.radius);
+    }
+}
